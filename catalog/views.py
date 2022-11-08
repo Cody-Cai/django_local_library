@@ -1,4 +1,4 @@
-from tkinter.tix import Tree
+#from tkinter.tix import Tree
 from django.shortcuts import render
 from .models import Book, Author, BookInstance, Genre
 from django.views import generic
@@ -95,7 +95,7 @@ from django.urls import reverse
 from catalog.forms import RenewBookForm, RenewBookModelForm
 
 @login_required
-@permission_required('catalog.can_renew', raise_exception=Tree)
+@permission_required('catalog.can_renew', raise_exception=True)
 def renew_book_librarian(request, pk):
     book_instance = get_object_or_404(BookInstance, pk=pk)
 
